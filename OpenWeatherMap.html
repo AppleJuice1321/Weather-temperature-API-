@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!-- Test af læsning af data fra API -->
-<!-- ProgB HTX Køge  prso april 2021 -->
 <head>
   <meta charset="UTF-8">
   <title>API OpenWeatherMap</title>
@@ -19,14 +17,6 @@ const url = 'http://api.openweathermap.org/data/2.5/weather?q=Ringsted,dk&APP
 document.getElementById('url').innerHTML = "Vi henter en JSON fil fra " + url;
 let response = await fetch(url);
 if (response.ok) { 
-  // if HTTP-status is 200-299
-        
-        // testudskrift hvis det ikke virker:
-        // alert("response ok");  // test only
-        // let text = await response.text(); // read response body as text
-        // alert("response body: " + text);
-
-  //get the response body as JSON data
   let data = await response.json();
   var Temperatur = (data.main.temp - 273.15).toPrecision(3);
 
@@ -38,7 +28,7 @@ else {
 }
 }
 
-GetAPIdata();   //hent data fra API
+GetAPIdata();
 </script>
 </body>
 </html>
